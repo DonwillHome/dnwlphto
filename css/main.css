@@ -208,54 +208,6 @@ footer {
     display: block;
 }
 
-/* Language switcher styles */
-.language-switcher {
-    position: relative;
-    margin-left: 20px;
-}
-
-.current-lang {
-    font-family: "Arimo", sans-serif;
-    background: none;
-    border: none;
-    color: var(--text-color);
-    cursor: pointer;
-    font-size: 14px;
-    padding: 5px;
-}
-
-.lang-dropdown {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background: white;
-    border: 1px solid var(--text-color);
-    border-radius: 4px;
-    padding: 5px 0;
-    min-width: 80px;
-}
-
-.language-switcher:hover .lang-dropdown {
-    display: block;
-}
-
-.lang-dropdown a {
-    display: block;
-    padding: 5px 15px;
-    text-decoration: none;
-    color: var(--text-color);
-    font-size: 14px;
-}
-
-.lang-dropdown a:hover {
-    background: rgba(0,0,0,0.05);
-}
-
-.lang-dropdown a.active {
-    font-weight: bold;
-}
-
 /* Language toggle button styles */
 .language-toggle {
     font-family: "Arimo", sans-serif;
@@ -266,6 +218,20 @@ footer {
     margin-left: 20px;
     cursor: pointer;
     transition: all 0.3s ease;
+}
+
+.language-toggle.mobile {
+    margin: 20px;
+    width: calc(100% - 40px);
+    border-color: white;
+}
+
+.language-toggle.mobile .lang-text {
+    color: white;
+}
+
+.language-toggle.mobile .lang-divider {
+    color: white;
 }
 
 .lang-text {
@@ -284,4 +250,8 @@ footer {
 
 .language-toggle:hover {
     background: rgba(0,0,0,0.05);
+}
+
+.language-toggle.mobile:hover {
+    background: rgba(255,255,255,0.1);
 } 

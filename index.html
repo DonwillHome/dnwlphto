@@ -25,7 +25,7 @@
             <a href="#services" data-translate="services">SERVICES</a>
             <a href="gallery.html" data-translate="gallery">GALLERY</a>
             <a href="information.html" data-translate="information">INFORMATION</a>
-            <a href="schedule.html" data-translate="schedule">SCHEDULE A SHOOT</a>
+            <a href="#schedule" data-translate="schedule">SCHEDULE A SHOOT</a>
             <a href="#login" data-translate="login">LOGIN</a>
             <button class="language-toggle" id="langToggle">
                 <span class="lang-text" data-lang="en">ENGLISH</span>
@@ -35,13 +35,18 @@
         </div>
         <!-- Mobile menu -->
         <div class="mobile-menu">
-            <button class="menu-button" data-translate="menuButton">Menu</button>
+            <button class="menu-button" data-translate="menu">Menu</button>
             <div class="mobile-nav">
                 <a href="#services" data-translate="services">SERVICES</a>
-                <a href="gallery.html" data-translate="gallery">GALLERY</a>
+                <a href="#gallery" data-translate="gallery">GALLERY</a>
                 <a href="information.html" data-translate="information">INFORMATION</a>
-                <a href="schedule.html" data-translate="schedule">SCHEDULE A SHOOT</a>
+                <a href="#schedule" data-translate="schedule">SCHEDULE A SHOOT</a>
                 <a href="#login" data-translate="login">LOGIN</a>
+                <button class="language-toggle mobile" id="langToggleMobile">
+                    <span class="lang-text" data-lang="en">ENGLISH</span>
+                    <span class="lang-divider">/</span>
+                    <span class="lang-text inactive" data-lang="sv">SVENSKA</span>
+                </button>
             </div>
         </div>
     </nav>
@@ -69,7 +74,7 @@
                     <div class="right-bottom">
                         <!-- Container0103 - Text content -->
                         <div class="container0103">
-                            <p data-translate="caseStudy1">At Tech Innovations AB, I transformed their team page by delivering consistent, professional headshots for their 50+ employees. The modern, approachable portraits helped humanize their brand and significantly improved their recruitment efforts. Their HR director noted a 40% increase in job application rates following the website update.</p>
+                            <p data-translate="text1">Based in Stockholm, I specialize in professional portrait and headshot photography for businesses. With a keen eye for detail and years of experience, I help companies and individuals create a strong visual presence through high-quality corporate headshots, product photography, and comprehensive event coverage.</p>
                         </div>
                         
                         <!-- Container0104 - Bottom image -->
@@ -106,7 +111,7 @@
                     <div class="right-bottom">
                         <!-- Container0203 - Text content -->
                         <div class="container0203">
-                            <p data-translate="caseStudy2">When Nordisk Finance needed to showcase their expertise across five Nordic offices, I created a cohesive visual identity through executive portraits and candid workplace photography. The resulting images conveyed both professionalism and accessibility, perfectly aligning with their brand values of trust and innovation.</p>
+                            <p data-translate="text2">My approach combines technical expertise with a natural, approachable style. Whether it's executive portraits, team photos, or documenting corporate events, I ensure each image aligns with your brand identity while capturing authentic moments and professional excellence.</p>
                         </div>
                         
                         <!-- Container0204 - Bottom image -->
@@ -149,7 +154,7 @@
                     <div class="right-bottom">
                         <!-- Container0303 - Text content -->
                         <div class="container0303">
-                            <p data-translate="caseStudy3">For Stockholm Creative Hub's annual conference, I provided comprehensive event coverage capturing keynote speeches, workshop interactions, and networking moments. The dynamic images not only documented the event but also generated engaging content for their social media, resulting in a 60% increase in early-bird registrations for their next event.</p>
+                            <p data-translate="text3">From individual business portraits to large-scale corporate events, I provide comprehensive photography services that help businesses tell their story. My experience includes working with startups, established corporations, and creative agencies across Stockholm and the Nordic region.</p>
                         </div>
                     </div>
                 </div>
@@ -185,7 +190,7 @@
                     <li><a href="#services" data-translate="services">SERVICES</a></li>
                     <li><a href="#gallery" data-translate="gallery">GALLERY</a></li>
                     <li><a href="information.html" data-translate="information">INFORMATION</a></li>
-                    <li><a href="schedule.html" data-translate="schedule">SCHEDULE A SHOOT</a></li>
+                    <li><a href="#schedule" data-translate="schedule">SCHEDULE A SHOOT</a></li>
                 </ul>
             </div>
 
@@ -209,6 +214,7 @@
         // Language switching functionality
         const translations = {
             en: {
+                menu: "Menu",
                 services: "SERVICES",
                 gallery: "GALLERY",
                 information: "INFORMATION",
@@ -216,16 +222,17 @@
                 login: "LOGIN",
                 portrait: "PORTRAIT PHOTOGRAPHY",
                 subscribe: "SUBSCRIBE",
-                signUp: "SIGN UP",
+                signUp: "Sign Up",
                 privacy: "We respect your privacy.",
                 siteMap: "SITE MAP",
                 follow: "FOLLOW",
                 newsUpdates: "Sign up with your email address to receive news and updates.",
-                caseStudy1: "At Tech Innovations AB, I transformed their team page by delivering consistent, professional headshots for their 50+ employees. The modern, approachable portraits helped humanize their brand and significantly improved their recruitment efforts. Their HR director noted a 40% increase in job application rates following the website update.",
-                caseStudy2: "When Nordisk Finance needed to showcase their expertise across five Nordic offices, I created a cohesive visual identity through executive portraits and candid workplace photography. The resulting images conveyed both professionalism and accessibility, perfectly aligning with their brand values of trust and innovation.",
-                caseStudy3: "For Stockholm Creative Hub's annual conference, I provided comprehensive event coverage capturing keynote speeches, workshop interactions, and networking moments. The dynamic images not only documented the event but also generated engaging content for their social media, resulting in a 60% increase in early-bird registrations for their next event."
+                text1: "Based in Stockholm, I specialize in professional portrait and headshot photography for businesses. With a keen eye for detail and years of experience, I help companies and individuals create a strong visual presence through high-quality corporate headshots, product photography, and comprehensive event coverage.",
+                text2: "My approach combines technical expertise with a natural, approachable style. Whether it's executive portraits, team photos, or documenting corporate events, I ensure each image aligns with your brand identity while capturing authentic moments and professional excellence.",
+                text3: "From individual business portraits to large-scale corporate events, I provide comprehensive photography services that help businesses tell their story. My experience includes working with startups, established corporations, and creative agencies across Stockholm and the Nordic region."
             },
             sv: {
+                menu: "Meny",
                 services: "TJÄNSTER",
                 gallery: "GALLERI",
                 information: "INFORMATION",
@@ -238,9 +245,9 @@
                 siteMap: "SIDKARTA",
                 follow: "FÖLJ",
                 newsUpdates: "Registrera dig med din e-postadress för att få nyheter och uppdateringar.",
-                caseStudy1: "Hos Tech Innovations AB förnyade jag deras teamsida genom att leverera enhetliga, professionella porträtt för deras över 50 anställda. De moderna, tillgängliga porträtten hjälpte till att humanisera deras varumärke och förbättrade markant deras rekryteringsprocess. Deras HR-direktör noterade en 40% ökning i jobbansökningar efter webbplatsuppdateringen.",
-                caseStudy2: "När Nordisk Finance behövde visa upp sin expertis över fem nordiska kontor, skapade jag en sammanhängande visuell identitet genom chefsporträtt och spontana arbetsplatsbilder. De resulterande bilderna förmedlade både professionalism och tillgänglighet, helt i linje med deras varumärkesvärden om förtroende och innovation.",
-                caseStudy3: "För Stockholm Creative Hubs årliga konferens levererade jag omfattande eventfotografering som fångade huvudtalare, workshopinteraktioner och nätverksstunder. De dynamiska bilderna dokumenterade inte bara eventet utan genererade även engagerande innehåll för deras sociala medier, vilket resulterade i en 60% ökning av early bird-registreringar till deras nästa event."
+                text1: "Baserad i Stockholm, specialiserar jag mig på professionell porträtt- och profilbildsfotografering för företag. Med öga för detaljer och års erfarenhet hjälper jag företag och individer att skapa en stark visuell närvaro genom högkvalitativa företagsporträtt, produktfotografering och omfattande eventdokumentation.",
+                text2: "Mitt arbetssätt kombinerar teknisk expertis med en naturlig och tillgänglig stil. Oavsett om det gäller chefsporträtt, teamfoton eller dokumentation av företagsevenemang, säkerställer jag att varje bild överensstämmer med din varumärkesidentitet samtidigt som jag fångar autentiska ögonblick och professionell excellens.",
+                text3: "Från individuella företagsporträtt till storskaliga företagsevenemang erbjuder jag omfattande fotograferingstjänster som hjälper företag att berätta sin historia. Min erfarenhet omfattar arbete med startups, etablerade företag och kreativa byråer i Stockholm och hela Norden."
             }
         };
 

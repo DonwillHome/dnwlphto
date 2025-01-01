@@ -77,6 +77,22 @@ body.information-page {
     color: var(--text-color);
 }
 
+/* Update header styles to exactly match main page */
+.container0202 .tagline {
+    font-family: "Arimo", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 2.5rem;
+    letter-spacing: -1.5px;
+    color: var(--text-color);
+    text-align: left;
+    margin-bottom: 20px;
+    white-space: nowrap;
+    width: 100%;
+    display: block;
+}
+
 /* Mobile styles */
 @media (max-width: 768px) {
     /* Override container padding for mobile */
@@ -132,5 +148,10 @@ body.information-page {
     /* Add hamburger menu for mobile */
     .mobile-menu {
         display: block;  /* Show on mobile */
+    }
+
+    .container0202 .tagline {
+        font-size: 2.5rem;
+        text-align: center;
     }
 } 

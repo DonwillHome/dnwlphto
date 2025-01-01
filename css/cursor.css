@@ -1,0 +1,49 @@
+/* Hide system cursor everywhere */
+* {
+    cursor: none !important;
+}
+
+/* Also hide cursor on specific interactive elements */
+a, 
+button, 
+input, 
+textarea, 
+select,
+.language-toggle,
+.menu-button,
+.subscribe-form button,
+.mobile-nav a {
+    cursor: none !important;
+}
+
+/* And on hover states */
+a:hover,
+button:hover,
+.language-toggle:hover,
+.menu-button:hover,
+.subscribe-form button:hover,
+.mobile-nav a:hover {
+    cursor: none !important;
+}
+
+/* Custom cursor */
+.custom-cursor {
+    width: 20px;
+    height: 20px;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(20px, 20px);
+    transition: all 0.1s ease;
+    background-image: url('../images/Cursor.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Cursor state when clicking - only change the image */
+.custom-cursor.clicking {
+    background-image: url('../images/CursorDown.png');
+} 
