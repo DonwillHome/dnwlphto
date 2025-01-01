@@ -5,7 +5,7 @@
     --background-color: #f7c944;
     --font-primary: "Noto Sans", sans-serif;
     --font-secondary: "Antic Didone", serif;
-    cursor: url('../images/CursorMain.png') 20 20, auto !important;
+    cursor: url('../images/CursorMain.png'), auto !important;
 }
 
 /* Base styles */
@@ -56,19 +56,16 @@ button:hover,
     position: fixed;
     pointer-events: none;
     z-index: 9999;
-    transform: translate(-20px, -20px);
-    transition: all 0.1s ease;
-    opacity: 0;
-    visibility: visible;
-}
-
-/* Cursor state when clicking - only change the image */
-.custom-cursor.clicking {
+    transform: translate(-11px, -12px);
     background-image: url('../images/CursorDown.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    opacity: 1;
+    display: none;
+}
+
+.custom-cursor.active {
+    display: block;
 }
 
 main {
@@ -325,4 +322,54 @@ footer {
 
 .language-toggle.mobile:hover {
     background: rgba(255,255,255,0.1);
+}
+
+/* Click effect */
+.click-image {
+    width: 20px;  /* Changed from 40px */
+    height: 20px; /* Changed from 40px */
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-10px, -10px); /* Adjusted for new size */
+    background-image: url('../images/CursorDown.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    display: block !important;
+}
+
+/* Navigation and more-info links shared styles */
+.nav-links a,
+.more-info {
+    font-family: "Arimo", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* Navigation specific styles */
+.nav-links a {
+    margin-left: 20px;
+}
+
+/* More info specific styles */
+a.more-info {
+    font-family: "Arimo", sans-serif !important;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.more-info-wrapper {
+    margin-top: 20px;
 } 

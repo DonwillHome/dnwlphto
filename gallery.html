@@ -72,7 +72,7 @@
         <div class="category-filter">
             <button class="filter-btn" data-category="all" data-translate="all">ALL</button>
             <button class="filter-btn active" data-category="headshots" data-translate="headshots">HEADSHOTS</button>
-            <button class="filter-btn" data-category="branding" data-translate="branding">PRODUCT BRANDING</button>
+            <button class="filter-btn" data-category="branding" data-translate="branding">COMPANY BRANDING</button>
             <button class="filter-btn" data-category="events" data-translate="events">COMPANY EVENTS</button>
         </div>
 
@@ -98,12 +98,12 @@
                 <img src="images/Headshot06.jpeg" alt="Professional Headshot">
             </div>
 
-            <!-- Product Branding -->
+            <!-- Company Branding -->
             <div class="gallery-item" data-category="branding">
-                <img src="images/Branding01.jpeg" alt="Product Branding">
+                <img src="images/Branding01.jpeg" alt="Company Branding">
             </div>
             <div class="gallery-item" data-category="branding">
-                <img src="images/Branding02.jpeg" alt="Product Branding">
+                <img src="images/Branding02.jpeg" alt="Company Branding">
             </div>
 
             <!-- Company Events -->
@@ -145,7 +145,7 @@
                     <li><a href="index.html" data-translate="services">SERVICES</a></li>
                     <li><a href="gallery.html" data-translate="gallery">GALLERY</a></li>
                     <li><a href="information.html" data-translate="information">INFORMATION</a></li>
-                    <li><a href="index.html#schedule" data-translate="schedule">SCHEDULE A SHOOT</a></li>
+                    <li><a href="schedule.html" data-translate="schedule">SCHEDULE A SHOOT</a></li>
                 </ul>
             </div>
 
@@ -225,7 +225,7 @@
             if (item.dataset.category === 'headshots') {
                 item.dataset.caption = "Professional headshot photography capturing personality and confidence.";
             } else if (item.dataset.category === 'branding') {
-                item.dataset.caption = "Product branding photography that tells your brand's unique story.";
+                item.dataset.caption = "Company branding photography that tells your brand's unique story.";
             } else if (item.dataset.category === 'events') {
                 item.dataset.caption = "Corporate event photography documenting key moments and interactions.";
             }
@@ -301,6 +301,7 @@
     </script>
 
     <script src="js/translations.js"></script>
+    <script src="js/gallery.js"></script>
     <script src="js/cursor.js"></script>
 </body>
 </html> 

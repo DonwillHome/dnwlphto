@@ -108,9 +108,14 @@
                     </div>
                 </div>
                 
-                <!-- Right side image -->
+                <!-- Right side image grid -->
                 <div class="container0201">
-                    <img src="images/Headshot02.png" alt="Professional Photography">
+                    <div class="image-grid">
+                        <img src="images/AnnualReport01.jpeg" alt="Annual Report Photography">
+                        <img src="images/BTS01.jpeg" alt="Behind the Scenes Photography">
+                        <img src="images/Headshot09.jpeg" alt="Professional Headshot">
+                        <img src="images/Product02.jpeg" alt="Product Photography">
+                    </div>
                 </div>
             </div>
         </div>
@@ -136,7 +141,7 @@
                     <li><a href="index.html" data-translate="services">SERVICES</a></li>
                     <li><a href="gallery.html" data-translate="gallery">GALLERY</a></li>
                     <li><a href="information.html" data-translate="information">INFORMATION</a></li>
-                    <li><a href="index.html#schedule" data-translate="schedule">SCHEDULE A SHOOT</a></li>
+                    <li><a href="schedule.html" data-translate="schedule">SCHEDULE A SHOOT</a></li>
                 </ul>
             </div>
 
@@ -156,13 +161,6 @@
         // Menu toggle
         document.querySelector('.menu-button').addEventListener('click', function() {
             this.parentElement.classList.toggle('active');
-        });
-
-        // Form submission
-        document.getElementById('scheduleForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Add form submission logic here
-            alert('Thank you for your inquiry. I will get back to you within 24 hours.');
         });
     </script>
 

@@ -1,32 +1,31 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Create cursor element
-    const cursor = document.createElement('div');
-    cursor.classList.add('custom-cursor');
-    document.body.appendChild(cursor);
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Cursor script loaded');
 
-    // Log to check if cursor element is created
-    console.log('Cursor element:', cursor);
-    
-    // Log to check if image is loading
-    const img = new Image();
-    img.src = 'images/Cursor.png';
-    img.onload = () => console.log('Cursor image loaded');
-    img.onerror = () => console.error('Cursor image failed to load');
+    // Test if image loads
+    const testImg = new Image();
+    testImg.onload = () => console.log('CursorDown.png loaded successfully');
+    testImg.onerror = () => console.error('Failed to load CursorDown.png');
+    testImg.src = 'images/CursorDown.png';
 
-    // Update cursor position with offset
-    document.addEventListener('mousemove', (e) => {
-        requestAnimationFrame(() => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-        });
-    });
+    document.addEventListener('mousedown', function(e) {
+        console.log('Mouse clicked at:', e.clientX, e.clientY);
+        
+        // Create new click image
+        const clickImage = document.createElement('div');
+        clickImage.className = 'click-image';
+        clickImage.style.left = e.clientX + 'px';
+        clickImage.style.top = e.clientY + 'px';
+        document.body.appendChild(clickImage);
+        
+        console.log('Click image created:', clickImage);
 
-    // Handle click state
-    document.addEventListener('mousedown', () => {
-        cursor.classList.add('clicking');
-    });
-
-    document.addEventListener('mouseup', () => {
-        cursor.classList.remove('clicking');
+        // Remove the image after delay
+        setTimeout(() => {
+            clickImage.style.opacity = '0';
+            setTimeout(() => {
+                clickImage.remove();
+                console.log('Click image removed');
+            }, 300); // Wait for fade out
+        }, 500); // Increased time to stay visible
     });
 }); 

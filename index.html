@@ -99,7 +99,7 @@
                         
                         <!-- Container0104 - Bottom image -->
                         <div class="container0104">
-                            <img src="images/FemaleSpeaker.jpeg" alt="Female Speaker at Corporate Event">
+                            <img src="images/Headshot06.jpeg" alt="Professional Headshot">
                         </div>
                     </div>
                 </div>
@@ -116,7 +116,7 @@
             <div class="container-content">
                 <!-- Container0201 - Left image -->
                 <div class="container0201">
-                    <img src="images/Headshot03.jpeg" alt="Professional Headshot">
+                    <img src="images/AnnualReport01.jpeg" alt="Annual Report Photography">
                 </div>
                 
                 <!-- Right side containers -->
@@ -141,19 +141,19 @@
                         
                         <!-- Container0204 - Bottom image -->
                         <div class="container0204">
-                            <img src="images/Headshot04.jpeg" alt="Professional Headshot">
+                            <img src="images/AnnualReport02.jpeg" alt="Annual Report Photography">
                         </div>
                     </div>
                 </div>
             </div>
             
-            <!-- Add Container0205 -->
+            <!-- Add Container0205 and Container0206 -->
             <div class="bottom-containers">
                 <div class="container0205">
-                    <img src="images/Headshot05.jpeg" alt="Professional Headshot">
+                    <img src="images/Product01.jpeg" alt="Product Photography">
                 </div>
                 <div class="container0206">
-                    <img src="images/Headshot10.jpeg" alt="Professional Headshot">
+                    <img src="images/Product02.jpeg" alt="Product Photography">
                 </div>
                 <div class="empty-container"></div>
             </div>
@@ -164,7 +164,7 @@
             <div class="container-content">
                 <!-- Container0301 - Left image -->
                 <div class="container0301">
-                    <img src="images/Headshot06.jpeg" alt="Professional Headshot">
+                    <img src="images/Gathering01.jpeg" alt="Corporate Event Gathering">
                 </div>
                 
                 <!-- Right side containers -->
@@ -192,10 +192,10 @@
             
             <!-- Single centered image like Container01 -->
             <div class="container0305">
-                <img src="images/Headshot07.jpeg" alt="Professional Headshot">
+                <img src="images/Expo02.jpeg" alt="Corporate Exhibition">
             </div>
             <div class="container0306">
-                <img src="images/Headshot10.jpeg" alt="Professional Headshot">
+                <img src="images/Gathering02.jpeg" alt="Corporate Event Gathering">
             </div>
         </div>
     </main>
@@ -237,129 +237,13 @@
     </footer>
 
     <script>
+        // Menu toggle
         document.querySelector('.menu-button').addEventListener('click', function() {
             this.parentElement.classList.toggle('active');
         });
-
-        // Custom cursor functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const cursor = document.querySelector('.custom-cursor');
-            
-            // Update cursor position
-            document.addEventListener('mousemove', function(e) {
-                cursor.style.left = e.clientX + 'px';
-                cursor.style.top = e.clientY + 'px';
-            });
-
-            // Add clicking state
-            document.addEventListener('mousedown', function() {
-                cursor.classList.add('clicking');
-            });
-
-            document.addEventListener('mouseup', function() {
-                cursor.classList.remove('clicking');
-            });
-        });
-
-        // Language switching functionality
-        const translations = {
-            en: {
-                menu: "Menu",
-                services: "SERVICES",
-                gallery: "GALLERY",
-                information: "INFORMATION",
-                schedule: "SCHEDULE A SHOOT",
-                login: "LOGIN",
-                portrait: "PORTRAIT PHOTOGRAPHY",
-                branding: "COMPANY BRANDING",
-                events: "COMPANY EVENTS",
-                subscribe: "SUBSCRIBE",
-                signUp: "Sign Up",
-                privacy: "We respect your privacy.",
-                siteMap: "SITE MAP",
-                follow: "FOLLOW",
-                newsUpdates: "Sign up with your email address to receive news and updates.",
-                text1: "Based in Stockholm, I specialize in professional portrait and headshot photography for businesses. With a keen eye for detail and years of experience, I help companies and individuals create a strong visual presence through high-quality corporate headshots, product photography, and comprehensive event coverage.",
-                moreInfo: "more info",
-                moreInfo2: "more info",
-                moreInfo3: "more info",
-                text2: "My approach combines technical expertise with a natural, approachable style. Whether it's executive portraits, team photos, or documenting corporate events, I ensure each image aligns with your brand identity while capturing authentic moments and professional excellence.",
-                text3: "From individual business portraits to large-scale corporate events, I provide comprehensive photography services that help businesses tell their story. My experience includes working with startups, established corporations, and creative agencies across Stockholm and the Nordic region."
-            },
-            sv: {
-                menu: "Meny",
-                services: "TJÄNSTER",
-                gallery: "GALLERI",
-                information: "INFORMATION",
-                schedule: "BOKA FOTOGRAFERING",
-                login: "LOGGA IN",
-                portrait: "PORTRÄTTFOTOGRAFI",
-                branding: "FÖRETAGSPROFILERING",
-                events: "FÖRETAGSEVENEMANG",
-                subscribe: "PRENUMERERA",
-                signUp: "REGISTRERA",
-                privacy: "Vi respekterar din integritet.",
-                siteMap: "SIDKARTA",
-                follow: "FÖLJ",
-                newsUpdates: "Registrera dig med din e-postadress för att få nyheter och uppdateringar.",
-                text1: "Baserad i Stockholm, specialiserar jag mig på professionell porträtt- och profilbildsfotografering för företag. Med öga för detaljer och års erfarenhet hjälper jag företag och individer att skapa en stark visuell närvaro genom högkvalitativa företagsporträtt, produktfotografering och omfattande eventdokumentation.",
-                moreInfo: "mer info",
-                moreInfo2: "mer info",
-                moreInfo3: "mer info",
-                text2: "Mitt arbetssätt kombinerar teknisk expertis med en naturlig och tillgänglig stil. Oavsett om det gäller chefsporträtt, teamfoton eller dokumentation av företagsevenemang, säkerställer jag att varje bild överensstämmer med din varumärkesidentitet samtidigt som jag fångar autentiska ögonblick och professionell excellens.",
-                text3: "Från individuella företagsporträtt till storskaliga företagsevenemang erbjuder jag omfattande fotograferingstjänster som hjälper företag att berätta sin historia. Min erfarenhet omfattar arbete med startups, etablerade företag och kreativa byråer i Stockholm och hela Norden."
-            }
-        };
-
-        // Initialize language from localStorage or default to English
-        let currentLang = localStorage.getItem('selectedLanguage') || 'en';
-
-        const langToggle = document.getElementById('langToggle');
-        const langToggleMobile = document.getElementById('langToggleMobile');
-        const langTexts = document.querySelectorAll('.lang-text');
-
-        // Function to update UI language
-        function updateLanguage(lang) {
-            // Update translations
-            document.querySelectorAll('[data-translate]').forEach(element => {
-                const key = element.getAttribute('data-translate');
-                if (translations[lang][key]) {
-                    if (key === 'text1') {
-                        element.innerHTML = translations[lang][key];  // Use innerHTML for content with HTML
-                    } else {
-                        element.textContent = translations[lang][key];  // Use textContent for plain text
-                    }
-                }
-            });
-
-            // Update button appearance for both desktop and mobile
-            langTexts.forEach(text => {
-                if (text.getAttribute('data-lang') === lang) {
-                    text.classList.remove('inactive');
-                } else {
-                    text.classList.add('inactive');
-                }
-            });
-
-            // Store selected language
-            localStorage.setItem('selectedLanguage', lang);
-            currentLang = lang;
-        }
-
-        // Toggle language when either button is clicked
-        [langToggle, langToggleMobile].forEach(toggle => {
-            if (toggle) {
-                toggle.addEventListener('click', () => {
-                    const newLang = currentLang === 'en' ? 'sv' : 'en';
-                    updateLanguage(newLang);
-                });
-            }
-        });
-
-        // Initialize with saved language
-        document.addEventListener('DOMContentLoaded', () => {
-            updateLanguage(currentLang);
-        });
     </script>
+
+    <script src="js/translations.js"></script>
+    <script src="js/cursor.js"></script>
 </body>
 </html> 
