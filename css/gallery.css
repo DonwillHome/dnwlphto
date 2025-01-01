@@ -152,4 +152,70 @@
     margin: 0;
     padding: 10px 0;
     max-width: 60%;
+}
+
+/* Add these mobile menu styles to match main.css */
+.mobile-menu {
+    display: none;  /* Hidden by default */
+    position: relative;
+}
+
+.menu-button {
+    font-family: "Arimo", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    background: none;
+    border: 1px solid var(--text-color);
+    color: var(--text-color);
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+
+.mobile-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #333;
+    padding: 20px;
+    border: 1px solid #444;
+    border-radius: 4px;
+    margin-top: 8px;
+    min-width: 200px;
+}
+
+.mobile-nav a {
+    font-family: "Arimo", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    display: block;
+    padding: 12px 20px;
+    color: white;
+    text-decoration: none;
+    text-align: left;
+    font-size: 1.1rem;
+}
+
+.mobile-nav a:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+/* Show mobile menu when active */
+.mobile-menu.active .mobile-nav {
+    display: block;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;  /* Hide regular nav */
+    }
+
+    .mobile-menu {
+        display: block;  /* Show mobile menu */
+    }
 } 

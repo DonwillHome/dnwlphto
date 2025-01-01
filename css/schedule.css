@@ -1,0 +1,143 @@
+/* Schedule page styles */
+.schedule-page {
+    background-color: var(--background-color);
+}
+
+/* Add header styles to match main page */
+.container0202 .tagline {
+    font-family: "Arimo", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 2.5rem;
+    letter-spacing: -1.5px;
+    color: var(--text-color);
+    text-align: left;
+    margin-bottom: 20px;
+    white-space: nowrap;
+    width: 100%;
+    display: block;
+}
+
+/* Update container layout */
+.container-content {
+    display: flex;
+    gap: 40px;
+    padding: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.left-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.container0201 {
+    flex: 1;
+    max-width: 50%;
+}
+
+.container0201 img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Form styles */
+.contact-form {
+    margin-top: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-family: "Arimo", sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    color: var(--text-color);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--text-color);
+    background: none;
+    font-family: "Arimo", sans-serif;
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.contact-form button {
+    font-family: "Arimo", sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 12px 24px;
+    background: var(--text-color);
+    color: var(--background-color);
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.contact-form button:hover {
+    opacity: 0.9;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .container-content {
+        flex-direction: column-reverse;
+        padding: 20px;
+    }
+
+    .container0201 {
+        max-width: 100%;
+    }
+
+    .container0202 .tagline {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+}
+
+/* Intro text styles to match main page's case study text */
+.container0203 p {
+    font-family: "Nixie One", serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    margin-bottom: 30px;
+}
+
+/* Match container spacing */
+.container0202 {
+    margin-bottom: 20px;
+}
+
+.container0203 {
+    margin-top: 20px;
+}
+
+/* Style the select dropdown options */
+.form-group select option {
+    font-family: "Arimo", sans-serif;
+    font-size: 1rem;
+} 

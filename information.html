@@ -22,21 +22,26 @@
         </div>
         <!-- Regular nav links (hidden on mobile) -->
         <div class="nav-links">
-            <a href="index.html#services">SERVICES</a>
-            <a href="gallery.html">GALLERY</a>
-            <a href="information.html">INFORMATION</a>
-            <a href="index.html#schedule">SCHEDULE A SHOOT</a>
-            <a href="index.html#login">LOGIN</a>
+            <a href="index.html#services" data-translate="services">SERVICES</a>
+            <a href="gallery.html" data-translate="gallery">GALLERY</a>
+            <a href="information.html" data-translate="information">INFORMATION</a>
+            <a href="schedule.html" data-translate="schedule">SCHEDULE A SHOOT</a>
+            <a href="index.html#login" data-translate="login">LOGIN</a>
+            <button class="language-toggle" id="langToggle">
+                <span class="lang-text" data-lang="en">ENGLISH</span>
+                <span class="lang-divider">/</span>
+                <span class="lang-text inactive" data-lang="sv">SVENSKA</span>
+            </button>
         </div>
         <!-- Mobile menu -->
         <div class="mobile-menu">
-            <button class="menu-button">Menu</button>
+            <button class="menu-button" data-translate="menuButton">Menu</button>
             <div class="mobile-nav">
-                <a href="index.html#services">SERVICES</a>
-                <a href="index.html#gallery">GALLERY</a>
-                <a href="information.html">INFORMATION</a>
-                <a href="index.html#schedule">SCHEDULE A SHOOT</a>
-                <a href="index.html#login">LOGIN</a>
+                <a href="index.html#services" data-translate="services">SERVICES</a>
+                <a href="gallery.html" data-translate="gallery">GALLERY</a>
+                <a href="information.html" data-translate="information">INFORMATION</a>
+                <a href="schedule.html" data-translate="schedule">SCHEDULE A SHOOT</a>
+                <a href="index.html#login" data-translate="login">LOGIN</a>
             </div>
         </div>
     </nav>
@@ -54,14 +59,20 @@
                     <div class="right-top">
                         <!-- Container0202 - Header -->
                         <div class="container0202">
-                            <div class="tagline">INFORMATION</div>
+                            <div class="tagline" data-translate="infoTitle">INFORMATION</div>
                         </div>
                     </div>
                     
                     <div class="right-bottom">
                         <!-- Container0203 - Text content -->
                         <div class="container0203">
-                            <p>Content about your photography services, pricing, process, etc. will go here...</p>
+                            <p data-translate="infoText1">With a keen eye for authenticity and professional excellence, I specialize in elevating corporate identities through sophisticated visual storytelling. My approach combines technical precision with an intuitive understanding of how to capture the essence of both individuals and brands.</p>
+                            
+                            <p data-translate="infoText2">From polished executive headshots that convey confidence and approachability, to dynamic event coverage that documents your company's pivotal moments, to product photography that showcases your brand's unique value proposition – each image is crafted to strengthen your professional narrative.</p>
+                            
+                            <p data-translate="infoText3">Having collaborated with industry leaders across various sectors, I understand the importance of efficiency and reliability in corporate partnerships. My streamlined workflow ensures a seamless experience from initial consultation to final delivery, respecting your time while exceeding your expectations.</p>
+                            
+                            <p data-translate="infoText4">Whether you're updating your company's visual assets, documenting important corporate events, or developing a new brand campaign, let's create imagery that authentically represents your professional story and resonates with your audience.</p>
                         </div>
                     </div>
                 </div>
@@ -90,7 +101,7 @@
                     <li><a href="index.html#services">SERVICES</a></li>
                     <li><a href="index.html#gallery">GALLERY</a></li>
                     <li><a href="information.html">INFORMATION</a></li>
-                    <li><a href="index.html#schedule">SCHEDULE A SHOOT</a></li>
+                    <li><a href="schedule.html">SCHEDULE A SHOOT</a></li>
                 </ul>
             </div>
 
@@ -105,5 +116,14 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Menu toggle
+        document.querySelector('.menu-button').addEventListener('click', function() {
+            this.parentElement.classList.toggle('active');
+        });
+    </script>
+
+    <script src="js/translations.js"></script>
 </body>
 </html> 

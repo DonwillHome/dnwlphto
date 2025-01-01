@@ -22,20 +22,25 @@
             </a>
         </div>
         <div class="nav-links">
-            <a href="index.html#services">SERVICES</a>
-            <a href="gallery.html">GALLERY</a>
-            <a href="information.html">INFORMATION</a>
-            <a href="index.html#schedule">SCHEDULE A SHOOT</a>
-            <a href="index.html#login">LOGIN</a>
+            <a href="index.html#services" data-translate="services">SERVICES</a>
+            <a href="gallery.html" data-translate="gallery">GALLERY</a>
+            <a href="information.html" data-translate="information">INFORMATION</a>
+            <a href="schedule.html" data-translate="schedule">SCHEDULE A SHOOT</a>
+            <a href="index.html#login" data-translate="login">LOGIN</a>
+            <button class="language-toggle" id="langToggle">
+                <span class="lang-text" data-lang="en">ENGLISH</span>
+                <span class="lang-divider">/</span>
+                <span class="lang-text inactive" data-lang="sv">SVENSKA</span>
+            </button>
         </div>
         <div class="mobile-menu">
-            <button class="menu-button">Menu</button>
+            <button class="menu-button" data-translate="menuButton">Menu</button>
             <div class="mobile-nav">
-                <a href="index.html#services">SERVICES</a>
-                <a href="gallery.html">GALLERY</a>
-                <a href="information.html">INFORMATION</a>
-                <a href="index.html#schedule">SCHEDULE A SHOOT</a>
-                <a href="index.html#login">LOGIN</a>
+                <a href="index.html#services" data-translate="services">SERVICES</a>
+                <a href="gallery.html" data-translate="gallery">GALLERY</a>
+                <a href="information.html" data-translate="information">INFORMATION</a>
+                <a href="schedule.html" data-translate="schedule">SCHEDULE A SHOOT</a>
+                <a href="index.html#login" data-translate="login">LOGIN</a>
             </div>
         </div>
     </nav>
@@ -43,10 +48,10 @@
     <main>
         <!-- Category Filter -->
         <div class="category-filter">
-            <button class="filter-btn" data-category="all">ALL</button>
-            <button class="filter-btn active" data-category="headshots">HEADSHOTS</button>
-            <button class="filter-btn" data-category="branding">PRODUCT BRANDING</button>
-            <button class="filter-btn" data-category="events">COMPANY EVENTS</button>
+            <button class="filter-btn" data-category="all" data-translate="all">ALL</button>
+            <button class="filter-btn active" data-category="headshots" data-translate="headshots">HEADSHOTS</button>
+            <button class="filter-btn" data-category="branding" data-translate="branding">PRODUCT BRANDING</button>
+            <button class="filter-btn" data-category="events" data-translate="events">COMPANY EVENTS</button>
         </div>
 
         <!-- Gallery Grid -->
@@ -100,7 +105,39 @@
 
     <!-- Same footer as other pages -->
     <footer>
-        <!-- Footer content -->
+        <div class="footer-content">
+            <!-- Subscribe Section -->
+            <div class="footer-section">
+                <h3 data-translate="subscribe">SUBSCRIBE</h3>
+                <p data-translate="newsUpdates">Sign up with your email address to receive news and updates.</p>
+                <div class="subscribe-form">
+                    <input type="email" placeholder="E-postadress">
+                    <button data-translate="signUp">Sign Up</button>
+                </div>
+                <p class="privacy-note" data-translate="privacy">We respect your privacy.</p>
+            </div>
+
+            <!-- Site Map Section -->
+            <div class="footer-section">
+                <h3 data-translate="siteMap">SITE MAP</h3>
+                <ul>
+                    <li><a href="index.html#services" data-translate="services">SERVICES</a></li>
+                    <li><a href="gallery.html" data-translate="gallery">GALLERY</a></li>
+                    <li><a href="information.html" data-translate="information">INFORMATION</a></li>
+                    <li><a href="schedule.html" data-translate="schedule">SCHEDULE A SHOOT</a></li>
+                </ul>
+            </div>
+
+            <!-- Follow Section -->
+            <div class="footer-section">
+                <h3 data-translate="follow">FOLLOW</h3>
+                <ul>
+                    <li><a href="#instagram">INSTAGRAM</a></li>
+                    <li><a href="#linkedin">LINKEDIN</a></li>
+                    <li><a href="#twitter">TWITTER</a></li>
+                </ul>
+            </div>
+        </div>
     </footer>
 
     <div class="lightbox">
@@ -241,5 +278,7 @@
             });
         });
     </script>
+
+    <script src="js/translations.js"></script>
 </body>
 </html> 
