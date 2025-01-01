@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/gallery.css">
     <link href="https://fonts.googleapis.com/css2?family=Antic+Didone&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -21,26 +22,47 @@
                 <img src="images/Headerlogo.png" alt="DNWL_PHTO">
             </a>
         </div>
+        <!-- Regular nav links -->
         <div class="nav-links">
-            <a href="index.html#services" data-translate="services">SERVICES</a>
+            <div class="dropdown">
+                <a href="index.html" data-translate="services">SERVICES</a>
+                <div class="dropdown-content">
+                    <a href="headshots.html">HEADSHOTS</a>
+                    <a href="company-branding.html">COMPANY BRANDING</a>
+                    <a href="company-events.html">COMPANY EVENTS</a>
+                </div>
+            </div>
             <a href="gallery.html" data-translate="gallery">GALLERY</a>
             <a href="information.html" data-translate="information">INFORMATION</a>
             <a href="schedule.html" data-translate="schedule">SCHEDULE A SHOOT</a>
-            <a href="index.html#login" data-translate="login">LOGIN</a>
+            <a href="#login" data-translate="login">LOGIN</a>
             <button class="language-toggle" id="langToggle">
                 <span class="lang-text" data-lang="en">ENGLISH</span>
                 <span class="lang-divider">/</span>
                 <span class="lang-text inactive" data-lang="sv">SVENSKA</span>
             </button>
         </div>
+        <!-- Mobile menu -->
         <div class="mobile-menu">
-            <button class="menu-button" data-translate="menuButton">Menu</button>
+            <button class="menu-button" data-translate="menu">Menu</button>
             <div class="mobile-nav">
-                <a href="index.html#services" data-translate="services">SERVICES</a>
+                <div class="dropdown">
+                    <a href="index.html" data-translate="services">SERVICES</a>
+                    <div class="dropdown-content">
+                        <a href="headshots.html">HEADSHOTS</a>
+                        <a href="company-branding.html">COMPANY BRANDING</a>
+                        <a href="company-events.html">COMPANY EVENTS</a>
+                    </div>
+                </div>
                 <a href="gallery.html" data-translate="gallery">GALLERY</a>
                 <a href="information.html" data-translate="information">INFORMATION</a>
                 <a href="schedule.html" data-translate="schedule">SCHEDULE A SHOOT</a>
-                <a href="index.html#login" data-translate="login">LOGIN</a>
+                <a href="#login" data-translate="login">LOGIN</a>
+                <button class="language-toggle mobile" id="langToggleMobile">
+                    <span class="lang-text" data-lang="en">ENGLISH</span>
+                    <span class="lang-divider">/</span>
+                    <span class="lang-text inactive" data-lang="sv">SVENSKA</span>
+                </button>
             </div>
         </div>
     </nav>
@@ -103,7 +125,6 @@
         </div>
     </main>
 
-    <!-- Same footer as other pages -->
     <footer>
         <div class="footer-content">
             <!-- Subscribe Section -->
@@ -121,10 +142,10 @@
             <div class="footer-section">
                 <h3 data-translate="siteMap">SITE MAP</h3>
                 <ul>
-                    <li><a href="index.html#services" data-translate="services">SERVICES</a></li>
+                    <li><a href="index.html" data-translate="services">SERVICES</a></li>
                     <li><a href="gallery.html" data-translate="gallery">GALLERY</a></li>
                     <li><a href="information.html" data-translate="information">INFORMATION</a></li>
-                    <li><a href="schedule.html" data-translate="schedule">SCHEDULE A SHOOT</a></li>
+                    <li><a href="index.html#schedule" data-translate="schedule">SCHEDULE A SHOOT</a></li>
                 </ul>
             </div>
 
@@ -151,130 +172,130 @@
     </div>
 
     <script>
-        // Wrap all JavaScript in DOMContentLoaded event
-        document.addEventListener('DOMContentLoaded', function() {
-            // Menu toggle
-            document.querySelector('.menu-button').addEventListener('click', function() {
-                this.parentElement.classList.toggle('active');
-            });
+        // Menu toggle
+        document.querySelector('.menu-button').addEventListener('click', function() {
+            this.parentElement.classList.toggle('active');
+        });
 
-            // Gallery filtering
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            const galleryItems = document.querySelectorAll('.gallery-item');
-            const lightbox = document.querySelector('.lightbox');
-            const lightboxImg = lightbox.querySelector('img');
-            const closeBtn = lightbox.querySelector('.lightbox-close');
-            const prevBtn = lightbox.querySelector('.lightbox-prev');
-            const nextBtn = lightbox.querySelector('.lightbox-next');
-            let currentCategory = 'headshots';
-            let currentIndex = 0;
+        // Gallery filtering
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const lightbox = document.querySelector('.lightbox');
+        const lightboxImg = lightbox.querySelector('img');
+        const closeBtn = lightbox.querySelector('.lightbox-close');
+        const prevBtn = lightbox.querySelector('.lightbox-prev');
+        const nextBtn = lightbox.querySelector('.lightbox-next');
+        let currentCategory = 'headshots';
+        let currentIndex = 0;
 
-            // Show headshots by default
-            galleryItems.forEach(item => {
-                if (item.dataset.category !== 'headshots') {
-                    item.style.display = 'none';
-                }
-            });
-
-            filterButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    button.classList.add('active');
-
-                    const category = button.dataset.category;
-
-                    galleryItems.forEach(item => {
-                        if (category === 'all' || item.dataset.category === category) {
-                            item.style.display = 'block';
-                        } else {
-                            item.style.display = 'none';
-                        }
-                    });
-                });
-            });
-
-            // Get all images in current category
-            function getCategoryImages() {
-                return Array.from(document.querySelectorAll(`.gallery-item[data-category="${currentCategory}"]:not([style*="display: none"]) img`));
+        // Show headshots by default
+        galleryItems.forEach(item => {
+            if (item.dataset.category !== 'headshots') {
+                item.style.display = 'none';
             }
+        });
 
-            // Add data attributes to gallery items for captions
-            document.querySelectorAll('.gallery-item').forEach(item => {
-                if (item.dataset.category === 'headshots') {
-                    item.dataset.caption = "Professional headshot photography capturing personality and confidence.";
-                } else if (item.dataset.category === 'branding') {
-                    item.dataset.caption = "Product branding photography that tells your brand's unique story.";
-                } else if (item.dataset.category === 'events') {
-                    item.dataset.caption = "Corporate event photography documenting key moments and interactions.";
-                }
-            });
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
 
-            // Update lightbox open function to include caption
-            const lightboxCaption = lightbox.querySelector('.lightbox-caption');
-            document.querySelectorAll('.gallery-item img').forEach(img => {
-                img.addEventListener('click', () => {
-                    const images = getCategoryImages();
-                    currentIndex = images.indexOf(img);
-                    lightboxImg.src = img.src;
-                    lightboxCaption.textContent = img.closest('.gallery-item').dataset.caption;
-                    lightbox.classList.add('active');
-                });
-            });
+                const category = button.dataset.category;
 
-            // Close lightbox
-            closeBtn.addEventListener('click', () => {
-                lightbox.classList.remove('active');
-            });
-
-            // Previous image
-            prevBtn.addEventListener('click', () => {
-                const images = getCategoryImages();
-                currentIndex = (currentIndex - 1 + images.length) % images.length;
-                lightboxImg.src = images[currentIndex].src;
-                lightboxCaption.textContent = images[currentIndex].closest('.gallery-item').dataset.caption;
-            });
-
-            // Next image
-            nextBtn.addEventListener('click', () => {
-                const images = getCategoryImages();
-                currentIndex = (currentIndex + 1) % images.length;
-                lightboxImg.src = images[currentIndex].src;
-                lightboxCaption.textContent = images[currentIndex].closest('.gallery-item').dataset.caption;
-            });
-
-            // Keyboard navigation
-            document.addEventListener('keydown', (e) => {
-                if (!lightbox.classList.contains('active')) return;
-                
-                if (e.key === 'Escape') lightbox.classList.remove('active');
-                if (e.key === 'ArrowLeft') prevBtn.click();
-                if (e.key === 'ArrowRight') nextBtn.click();
-            });
-
-            // Touch swipe for mobile
-            let touchStartX = 0;
-            lightbox.addEventListener('touchstart', (e) => {
-                touchStartX = e.touches[0].clientX;
-            });
-
-            lightbox.addEventListener('touchend', (e) => {
-                const touchEndX = e.changedTouches[0].clientX;
-                const diff = touchStartX - touchEndX;
-
-                if (Math.abs(diff) > 50) { // Minimum swipe distance
-                    if (diff > 0) {
-                        nextBtn.click(); // Swipe left = next
+                galleryItems.forEach(item => {
+                    if (category === 'all' || item.dataset.category === category) {
+                        item.style.display = 'block';
                     } else {
-                        prevBtn.click(); // Swipe right = previous
+                        item.style.display = 'none';
                     }
-                }
-            });
-
-            // Update current category when switching tabs
-            filterButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    currentCategory = button.dataset.category;
                 });
+            });
+        });
+
+        // Get all images in current category
+        function getCategoryImages() {
+            if (currentCategory === 'all') {
+                return Array.from(document.querySelectorAll('.gallery-item:not([style*="display: none"]) img'));
+            }
+            return Array.from(document.querySelectorAll(`.gallery-item[data-category="${currentCategory}"]:not([style*="display: none"]) img`));
+        }
+
+        // Add data attributes to gallery items for captions
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            if (item.dataset.category === 'headshots') {
+                item.dataset.caption = "Professional headshot photography capturing personality and confidence.";
+            } else if (item.dataset.category === 'branding') {
+                item.dataset.caption = "Product branding photography that tells your brand's unique story.";
+            } else if (item.dataset.category === 'events') {
+                item.dataset.caption = "Corporate event photography documenting key moments and interactions.";
+            }
+        });
+
+        // Update lightbox open function to include caption
+        const lightboxCaption = lightbox.querySelector('.lightbox-caption');
+        document.querySelectorAll('.gallery-item img').forEach(img => {
+            img.addEventListener('click', () => {
+                const images = getCategoryImages();
+                currentIndex = images.indexOf(img);
+                lightboxImg.src = img.src;
+                lightboxCaption.textContent = img.closest('.gallery-item').dataset.caption;
+                lightbox.classList.add('active');
+            });
+        });
+
+        // Close lightbox
+        closeBtn.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+        });
+
+        // Previous image
+        prevBtn.addEventListener('click', () => {
+            const images = getCategoryImages();
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            lightboxImg.src = images[currentIndex].src;
+            lightboxCaption.textContent = images[currentIndex].closest('.gallery-item').dataset.caption;
+        });
+
+        // Next image
+        nextBtn.addEventListener('click', () => {
+            const images = getCategoryImages();
+            currentIndex = (currentIndex + 1) % images.length;
+            lightboxImg.src = images[currentIndex].src;
+            lightboxCaption.textContent = images[currentIndex].closest('.gallery-item').dataset.caption;
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            
+            if (e.key === 'Escape') lightbox.classList.remove('active');
+            if (e.key === 'ArrowLeft') prevBtn.click();
+            if (e.key === 'ArrowRight') nextBtn.click();
+        });
+
+        // Touch swipe for mobile
+        let touchStartX = 0;
+        lightbox.addEventListener('touchstart', (e) => {
+            touchStartX = e.touches[0].clientX;
+        });
+
+        lightbox.addEventListener('touchend', (e) => {
+            const touchEndX = e.changedTouches[0].clientX;
+            const diff = touchStartX - touchEndX;
+
+            if (Math.abs(diff) > 50) { // Minimum swipe distance
+                if (diff > 0) {
+                    nextBtn.click(); // Swipe left = next
+                } else {
+                    prevBtn.click(); // Swipe right = previous
+                }
+            }
+        });
+
+        // Update current category when switching tabs
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                currentCategory = button.dataset.category;
             });
         });
     </script>

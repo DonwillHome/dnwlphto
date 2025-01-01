@@ -23,10 +23,17 @@
         </div>
         <!-- Regular nav links (hidden on mobile) -->
         <div class="nav-links">
-            <a href="#services" data-translate="services">SERVICES</a>
+            <div class="dropdown">
+                <a href="#services" data-translate="services">SERVICES</a>
+                <div class="dropdown-content">
+                    <a href="headshots.html">HEADSHOTS</a>
+                    <a href="company-branding.html">COMPANY BRANDING</a>
+                    <a href="company-events.html">COMPANY EVENTS</a>
+                </div>
+            </div>
             <a href="gallery.html" data-translate="gallery">GALLERY</a>
             <a href="information.html" data-translate="information">INFORMATION</a>
-            <a href="#schedule" data-translate="schedule">SCHEDULE A SHOOT</a>
+            <a href="schedule.html" data-translate="schedule">SCHEDULE A SHOOT</a>
             <a href="#login" data-translate="login">LOGIN</a>
             <button class="language-toggle" id="langToggle">
                 <span class="lang-text" data-lang="en">ENGLISH</span>
@@ -38,10 +45,17 @@
         <div class="mobile-menu">
             <button class="menu-button" data-translate="menu">Menu</button>
             <div class="mobile-nav">
-                <a href="#services" data-translate="services">SERVICES</a>
-                <a href="#gallery" data-translate="gallery">GALLERY</a>
+                <div class="dropdown">
+                    <a href="#services" data-translate="services">SERVICES</a>
+                    <div class="dropdown-content">
+                        <a href="headshots.html">HEADSHOTS</a>
+                        <a href="company-branding.html">COMPANY BRANDING</a>
+                        <a href="company-events.html">COMPANY EVENTS</a>
+                    </div>
+                </div>
+                <a href="gallery.html" data-translate="gallery">GALLERY</a>
                 <a href="information.html" data-translate="information">INFORMATION</a>
-                <a href="#schedule" data-translate="schedule">SCHEDULE A SHOOT</a>
+                <a href="schedule.html" data-translate="schedule">SCHEDULE A SHOOT</a>
                 <a href="#login" data-translate="login">LOGIN</a>
                 <button class="language-toggle mobile" id="langToggleMobile">
                     <span class="lang-text" data-lang="en">ENGLISH</span>
@@ -75,7 +89,12 @@
                     <div class="right-bottom">
                         <!-- Container0103 - Text content -->
                         <div class="container0103">
-                            <p data-translate="text1">Based in Stockholm, I specialize in professional portrait and headshot photography for businesses. With a keen eye for detail and years of experience, I help companies and individuals create a strong visual presence through high-quality corporate headshots, product photography, and comprehensive event coverage.</p>
+                            <p>
+                                <span data-translate="text1">Based in Stockholm, I specialize in professional portrait and headshot photography for businesses. With a keen eye for detail and years of experience, I help companies and individuals create a strong visual presence through high-quality corporate headshots, product photography, and comprehensive event coverage.</span>
+                                <div class='more-info-wrapper'>
+                                    <a href='headshots.html' class='more-info' data-translate="moreInfo">more info</a>
+                                </div>
+                            </p>
                         </div>
                         
                         <!-- Container0104 - Bottom image -->
@@ -105,14 +124,19 @@
                     <div class="right-top">
                         <!-- Container0202 - Header -->
                         <div class="container0202">
-                            <div class="tagline" data-translate="portrait">PORTRAIT PHOTOGRAPHY</div>
+                            <div class="tagline" data-translate="branding">COMPANY BRANDING</div>
                         </div>
                     </div>
                     
                     <div class="right-bottom">
                         <!-- Container0203 - Text content -->
                         <div class="container0203">
-                            <p data-translate="text2">My approach combines technical expertise with a natural, approachable style. Whether it's executive portraits, team photos, or documenting corporate events, I ensure each image aligns with your brand identity while capturing authentic moments and professional excellence.</p>
+                            <p>
+                                <span data-translate="text2">My approach combines technical expertise with a natural, approachable style. Whether it's executive portraits, team photos, or documenting corporate events, I ensure each image aligns with your brand identity while capturing authentic moments and professional excellence.</span>
+                                <div class='more-info-wrapper'>
+                                    <a href='company-branding.html' class='more-info' data-translate="moreInfo2">more info</a>
+                                </div>
+                            </p>
                         </div>
                         
                         <!-- Container0204 - Bottom image -->
@@ -148,14 +172,19 @@
                     <div class="right-top">
                         <!-- Container0302 - Header -->
                         <div class="container0302">
-                            <div class="tagline" data-translate="portrait">PORTRAIT PHOTOGRAPHY</div>
+                            <div class="tagline" data-translate="events">COMPANY EVENTS</div>
                         </div>
                     </div>
                     
                     <div class="right-bottom">
                         <!-- Container0303 - Text content -->
                         <div class="container0303">
-                            <p data-translate="text3">From individual business portraits to large-scale corporate events, I provide comprehensive photography services that help businesses tell their story. My experience includes working with startups, established corporations, and creative agencies across Stockholm and the Nordic region.</p>
+                            <p>
+                                <span data-translate="text3">From individual business portraits to large-scale corporate events, I provide comprehensive photography services that help businesses tell their story. My experience includes working with startups, established corporations, and creative agencies across Stockholm and the Nordic region.</span>
+                                <div class='more-info-wrapper'>
+                                    <a href='company-events.html' class='more-info' data-translate="moreInfo3">more info</a>
+                                </div>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -189,9 +218,9 @@
                 <h3 data-translate="siteMap">SITE MAP</h3>
                 <ul>
                     <li><a href="#services" data-translate="services">SERVICES</a></li>
-                    <li><a href="#gallery" data-translate="gallery">GALLERY</a></li>
+                    <li><a href="gallery.html" data-translate="gallery">GALLERY</a></li>
                     <li><a href="information.html" data-translate="information">INFORMATION</a></li>
-                    <li><a href="#schedule" data-translate="schedule">SCHEDULE A SHOOT</a></li>
+                    <li><a href="schedule.html" data-translate="schedule">SCHEDULE A SHOOT</a></li>
                 </ul>
             </div>
 
@@ -242,6 +271,8 @@
                 schedule: "SCHEDULE A SHOOT",
                 login: "LOGIN",
                 portrait: "PORTRAIT PHOTOGRAPHY",
+                branding: "COMPANY BRANDING",
+                events: "COMPANY EVENTS",
                 subscribe: "SUBSCRIBE",
                 signUp: "Sign Up",
                 privacy: "We respect your privacy.",
@@ -249,6 +280,9 @@
                 follow: "FOLLOW",
                 newsUpdates: "Sign up with your email address to receive news and updates.",
                 text1: "Based in Stockholm, I specialize in professional portrait and headshot photography for businesses. With a keen eye for detail and years of experience, I help companies and individuals create a strong visual presence through high-quality corporate headshots, product photography, and comprehensive event coverage.",
+                moreInfo: "more info",
+                moreInfo2: "more info",
+                moreInfo3: "more info",
                 text2: "My approach combines technical expertise with a natural, approachable style. Whether it's executive portraits, team photos, or documenting corporate events, I ensure each image aligns with your brand identity while capturing authentic moments and professional excellence.",
                 text3: "From individual business portraits to large-scale corporate events, I provide comprehensive photography services that help businesses tell their story. My experience includes working with startups, established corporations, and creative agencies across Stockholm and the Nordic region."
             },
@@ -260,6 +294,8 @@
                 schedule: "BOKA FOTOGRAFERING",
                 login: "LOGGA IN",
                 portrait: "PORTRÄTTFOTOGRAFI",
+                branding: "FÖRETAGSPROFILERING",
+                events: "FÖRETAGSEVENEMANG",
                 subscribe: "PRENUMERERA",
                 signUp: "REGISTRERA",
                 privacy: "Vi respekterar din integritet.",
@@ -267,6 +303,9 @@
                 follow: "FÖLJ",
                 newsUpdates: "Registrera dig med din e-postadress för att få nyheter och uppdateringar.",
                 text1: "Baserad i Stockholm, specialiserar jag mig på professionell porträtt- och profilbildsfotografering för företag. Med öga för detaljer och års erfarenhet hjälper jag företag och individer att skapa en stark visuell närvaro genom högkvalitativa företagsporträtt, produktfotografering och omfattande eventdokumentation.",
+                moreInfo: "mer info",
+                moreInfo2: "mer info",
+                moreInfo3: "mer info",
                 text2: "Mitt arbetssätt kombinerar teknisk expertis med en naturlig och tillgänglig stil. Oavsett om det gäller chefsporträtt, teamfoton eller dokumentation av företagsevenemang, säkerställer jag att varje bild överensstämmer med din varumärkesidentitet samtidigt som jag fångar autentiska ögonblick och professionell excellens.",
                 text3: "Från individuella företagsporträtt till storskaliga företagsevenemang erbjuder jag omfattande fotograferingstjänster som hjälper företag att berätta sin historia. Min erfarenhet omfattar arbete med startups, etablerade företag och kreativa byråer i Stockholm och hela Norden."
             }
@@ -285,7 +324,11 @@
             document.querySelectorAll('[data-translate]').forEach(element => {
                 const key = element.getAttribute('data-translate');
                 if (translations[lang][key]) {
-                    element.textContent = translations[lang][key];
+                    if (key === 'text1') {
+                        element.innerHTML = translations[lang][key];  // Use innerHTML for content with HTML
+                    } else {
+                        element.textContent = translations[lang][key];  // Use textContent for plain text
+                    }
                 }
             });
 

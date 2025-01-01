@@ -6,7 +6,7 @@ class LanguageManager {
                 services: "SERVICES",
                 gallery: "GALLERY",
                 information: "INFORMATION",
-                infoHeader: "SCHEDULE A SHOOT",
+                infoHeader: "INFORMATION",
                 schedule: "SCHEDULE A SHOOT",
                 login: "LOGIN",
                 portrait1: "SCHEDULE A SHOOT",
@@ -37,13 +37,19 @@ class LanguageManager {
                 formCompany: "Company",
                 formEmail: "Email",
                 formMessage: "Message",
-                formSubmit: "Send Request"
+                formSubmit: "Send Request",
+                headshotsTitle: "HEADSHOT PHOTOGRAPHY",
+                headshotsText: "Professional headshots are essential for creating a strong personal brand. I offer tailored headshot sessions for individuals and companies, ensuring each photo captures your unique personality while maintaining a polished, professional appearance.",
+                brandingTitle: "COMPANY BRANDING",
+                brandingText: "My approach to company branding photography combines technical expertise with a natural, approachable style. I ensure each image aligns with your brand identity while capturing authentic moments and professional excellence. From team photos to product imagery, I help create a cohesive visual identity that represents your company's values and culture.",
+                eventsTitle: "COMPANY EVENTS",
+                eventsText: "From conferences and corporate gatherings to team building events, I provide comprehensive event photography services that capture the essence of your company's culture. With experience working with startups, established corporations, and creative agencies across Stockholm and the Nordic region, I ensure every important moment is documented with style and professionalism."
             },
             sv: {
                 services: "TJÄNSTER",
                 gallery: "GALLERI",
                 information: "INFORMATION",
-                infoHeader: "BOKA FOTOGRAFERING",
+                infoHeader: "INFORMATION",
                 schedule: "BOKA FOTOGRAFERING",
                 login: "LOGGA IN",
                 portrait1: "BOKA FOTOGRAFERING",
@@ -74,7 +80,13 @@ class LanguageManager {
                 formCompany: "Företag",
                 formEmail: "E-post",
                 formMessage: "Meddelande",
-                formSubmit: "Skicka förfrågan"
+                formSubmit: "Skicka förfrågan",
+                headshotsTitle: "PORTRÄTTFOTOGRAFI",
+                headshotsText: "Professionella porträttbilder är avgörande för att skapa ett starkt personligt varumärke. Jag erbjuder skräddarsydda porträttsessioner för individer och företag, och säkerställer att varje foto fångar din unika personlighet samtidigt som det behåller ett polerat, professionellt utseende.",
+                brandingTitle: "FÖRETAGSPROFILERING",
+                brandingText: "Mitt tillvägagångssätt för företagsprofileringsfotografi kombinerar teknisk expertis med en naturlig och tillgänglig stil. Jag säkerställer att varje bild överensstämmer med din varumärkesidentitet samtidigt som jag fångar autentiska ögonblick och professionell excellens. Från teamfoton till produktbilder hjälper jag till att skapa en sammanhängande visuell identitet som representerar företagets värderingar och kultur.",
+                eventsTitle: "FÖRETAGSEVENEMANG",
+                eventsText: "Från konferenser och företagssammankomster till teambuilding-evenemang tillhandahåller jag omfattande eventfotograferingstjänster som fångar essensen av företagets kultur. Med erfarenhet av att arbeta med startups, etablerade företag och kreativa byråer i Stockholm och Norden säkerställer jag att varje viktigt ögonblick dokumenteras med stil och professionalism."
             }
         };
         

@@ -3,31 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schedule a Shoot - DNWL PHTO</title>
+    <title>Company Branding Photography - DNWL_PHTO</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/schedule.css">
     <link href="https://fonts.googleapis.com/css2?family=Antic+Didone&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nixie+One&display=swap" rel="stylesheet">
 </head>
-<body class="schedule-page">
+<body>
+    <div class="custom-cursor"></div>
     <nav>
         <div class="logo">
             <a href="index.html">
                 <img src="images/Headerlogo.png" alt="DNWL_PHTO">
             </a>
         </div>
-        <!-- Regular nav links -->
+        <!-- Regular nav links (hidden on mobile) -->
         <div class="nav-links">
             <div class="dropdown">
                 <a href="index.html" data-translate="services">SERVICES</a>
                 <div class="dropdown-content">
                     <a href="headshots.html">HEADSHOTS</a>
-                    <a href="company-branding.html">COMPANY BRANDING</a>
                     <a href="company-events.html">COMPANY EVENTS</a>
                 </div>
             </div>
@@ -49,7 +48,6 @@
                     <a href="index.html" data-translate="services">SERVICES</a>
                     <div class="dropdown-content">
                         <a href="headshots.html">HEADSHOTS</a>
-                        <a href="company-branding.html">COMPANY BRANDING</a>
                         <a href="company-events.html">COMPANY EVENTS</a>
                     </div>
                 </div>
@@ -67,50 +65,27 @@
     </nav>
 
     <main>
-        <div class="container02">
+        <h1 class="brand-name">D<span class="spread-letters">NWL</span><span class="underscore">_</span><span class="spread-letters">PHTO</span></h1>
+        
+        <!-- Company Branding Content -->
+        <div class="container01">
             <div class="container-content">
-                <!-- Left side content with form -->
-                <div class="left-side">
-                    <div class="left-top">
-                        <div class="container0202">
-                            <div class="tagline" data-translate="scheduleTitle">SCHEDULE A SHOOT</div>
+                <div class="container0101">
+                    <img src="images/Headshot04.jpeg" alt="Professional Branding Photography">
+                </div>
+                
+                <div class="right-side">
+                    <div class="right-top">
+                        <div class="container0102">
+                            <div class="tagline" data-translate="brandingTitle">COMPANY BRANDING</div>
                         </div>
                     </div>
                     
-                    <div class="left-bottom">
-                        <div class="container0203">
-                            <p data-translate="scheduleIntro">Ready to create professional imagery that elevates your brand? Fill out the form below and I'll get back to you within 24 hours to discuss your photography needs.</p>
-                            
-                            <form class="contact-form" id="scheduleForm">
-                                <div class="form-group">
-                                    <label for="name" data-translate="formName">Name</label>
-                                    <input type="text" id="name" name="name" required>
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label for="company" data-translate="formCompany">Company</label>
-                                    <input type="text" id="company" name="company">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="email" data-translate="formEmail">Email</label>
-                                    <input type="email" id="email" name="email" required>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="message" data-translate="formMessage">Message</label>
-                                    <textarea id="message" name="message" rows="4" required></textarea>
-                                </div>
-
-                                <button type="submit" data-translate="formSubmit">Send Request</button>
-                            </form>
+                    <div class="right-bottom">
+                        <div class="container0103">
+                            <p data-translate="brandingText">My approach to company branding photography combines technical expertise with a natural, approachable style. I ensure each image aligns with your brand identity while capturing authentic moments and professional excellence. From team photos to product imagery, I help create a cohesive visual identity that represents your company's values and culture.</p>
                         </div>
                     </div>
-                </div>
-                
-                <!-- Right side image -->
-                <div class="container0201">
-                    <img src="images/Headshot02.png" alt="Professional Photography">
                 </div>
             </div>
         </div>
@@ -118,7 +93,6 @@
 
     <footer>
         <div class="footer-content">
-            <!-- Subscribe Section -->
             <div class="footer-section">
                 <h3 data-translate="subscribe">SUBSCRIBE</h3>
                 <p data-translate="newsUpdates">Sign up with your email address to receive news and updates.</p>
@@ -129,7 +103,6 @@
                 <p class="privacy-note" data-translate="privacy">We respect your privacy.</p>
             </div>
 
-            <!-- Site Map Section -->
             <div class="footer-section">
                 <h3 data-translate="siteMap">SITE MAP</h3>
                 <ul>
@@ -140,7 +113,6 @@
                 </ul>
             </div>
 
-            <!-- Follow Section -->
             <div class="footer-section">
                 <h3 data-translate="follow">FOLLOW</h3>
                 <ul>
@@ -158,11 +130,22 @@
             this.parentElement.classList.toggle('active');
         });
 
-        // Form submission
-        document.getElementById('scheduleForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Add form submission logic here
-            alert('Thank you for your inquiry. I will get back to you within 24 hours.');
+        // Custom cursor functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const cursor = document.querySelector('.custom-cursor');
+            
+            document.addEventListener('mousemove', function(e) {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+            });
+
+            document.addEventListener('mousedown', function() {
+                cursor.classList.add('clicking');
+            });
+
+            document.addEventListener('mouseup', function() {
+                cursor.classList.remove('clicking');
+            });
         });
     </script>
 

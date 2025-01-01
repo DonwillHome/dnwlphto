@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/information.css">
     <link href="https://fonts.googleapis.com/css2?family=Antic+Didone&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -20,13 +21,20 @@
                 <img src="images/Headerlogo.png" alt="DNWL_PHTO">
             </a>
         </div>
-        <!-- Regular nav links (hidden on mobile) -->
+        <!-- Regular nav links -->
         <div class="nav-links">
-            <a href="index.html#services" data-translate="services">SERVICES</a>
+            <div class="dropdown">
+                <a href="index.html" data-translate="services">SERVICES</a>
+                <div class="dropdown-content">
+                    <a href="headshots.html">HEADSHOTS</a>
+                    <a href="company-branding.html">COMPANY BRANDING</a>
+                    <a href="company-events.html">COMPANY EVENTS</a>
+                </div>
+            </div>
             <a href="gallery.html" data-translate="gallery">GALLERY</a>
             <a href="information.html" data-translate="information">INFORMATION</a>
             <a href="schedule.html" data-translate="schedule">SCHEDULE A SHOOT</a>
-            <a href="index.html#login" data-translate="login">LOGIN</a>
+            <a href="#login" data-translate="login">LOGIN</a>
             <button class="language-toggle" id="langToggle">
                 <span class="lang-text" data-lang="en">ENGLISH</span>
                 <span class="lang-divider">/</span>
@@ -35,13 +43,25 @@
         </div>
         <!-- Mobile menu -->
         <div class="mobile-menu">
-            <button class="menu-button" data-translate="menuButton">Menu</button>
+            <button class="menu-button" data-translate="menu">Menu</button>
             <div class="mobile-nav">
-                <a href="index.html#services" data-translate="services">SERVICES</a>
+                <div class="dropdown">
+                    <a href="index.html" data-translate="services">SERVICES</a>
+                    <div class="dropdown-content">
+                        <a href="headshots.html">HEADSHOTS</a>
+                        <a href="company-branding.html">COMPANY BRANDING</a>
+                        <a href="company-events.html">COMPANY EVENTS</a>
+                    </div>
+                </div>
                 <a href="gallery.html" data-translate="gallery">GALLERY</a>
                 <a href="information.html" data-translate="information">INFORMATION</a>
                 <a href="schedule.html" data-translate="schedule">SCHEDULE A SHOOT</a>
-                <a href="index.html#login" data-translate="login">LOGIN</a>
+                <a href="#login" data-translate="login">LOGIN</a>
+                <button class="language-toggle mobile" id="langToggleMobile">
+                    <span class="lang-text" data-lang="en">ENGLISH</span>
+                    <span class="lang-divider">/</span>
+                    <span class="lang-text inactive" data-lang="sv">SVENSKA</span>
+                </button>
             </div>
         </div>
     </nav>
@@ -51,7 +71,7 @@
             <div class="container-content">
                 <!-- Container0201 - Right side image -->
                 <div class="container0201">
-                    <img src="images/Headshot03.jpeg" alt="Professional Headshot">
+                    <img src="images/Headshot07.jpeg" alt="Professional Headshot">
                 </div>
                 
                 <!-- Left side containers -->
@@ -59,7 +79,7 @@
                     <div class="right-top">
                         <!-- Container0202 - Header -->
                         <div class="container0202">
-                            <div class="tagline" data-translate="infoHeader">SCHEDULE A SHOOT</div>
+                            <div class="tagline" data-translate="infoHeader">INFORMATION</div>
                         </div>
                     </div>
                     
@@ -81,33 +101,32 @@
     </main>
 
     <footer>
-        <!-- Same footer as index.html -->
         <div class="footer-content">
             <!-- Subscribe Section -->
             <div class="footer-section">
-                <h3>SUBSCRIBE</h3>
-                <p>Sign up with your email address to receive news and updates.</p>
+                <h3 data-translate="subscribe">SUBSCRIBE</h3>
+                <p data-translate="newsUpdates">Sign up with your email address to receive news and updates.</p>
                 <div class="subscribe-form">
                     <input type="email" placeholder="E-postadress">
-                    <button>Sign Up</button>
+                    <button data-translate="signUp">Sign Up</button>
                 </div>
-                <p class="privacy-note">We respect your privacy.</p>
+                <p class="privacy-note" data-translate="privacy">We respect your privacy.</p>
             </div>
 
             <!-- Site Map Section -->
             <div class="footer-section">
-                <h3>SITE MAP</h3>
+                <h3 data-translate="siteMap">SITE MAP</h3>
                 <ul>
-                    <li><a href="index.html#services">SERVICES</a></li>
-                    <li><a href="index.html#gallery">GALLERY</a></li>
-                    <li><a href="information.html">INFORMATION</a></li>
-                    <li><a href="schedule.html">SCHEDULE A SHOOT</a></li>
+                    <li><a href="index.html" data-translate="services">SERVICES</a></li>
+                    <li><a href="gallery.html" data-translate="gallery">GALLERY</a></li>
+                    <li><a href="information.html" data-translate="information">INFORMATION</a></li>
+                    <li><a href="index.html#schedule" data-translate="schedule">SCHEDULE A SHOOT</a></li>
                 </ul>
             </div>
 
             <!-- Follow Section -->
             <div class="footer-section">
-                <h3>FOLLOW</h3>
+                <h3 data-translate="follow">FOLLOW</h3>
                 <ul>
                     <li><a href="#instagram">INSTAGRAM</a></li>
                     <li><a href="#linkedin">LINKEDIN</a></li>
