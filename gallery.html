@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - DNWL PHTO</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/gallery.css">
+    <link href="https://fonts.googleapis.com/css2?family=Antic+Didone&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nixie+One&display=swap" rel="stylesheet">
+</head>
+<body class="gallery-page">
+    <!-- Same navigation as other pages -->
+    <nav>
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/Headerlogo.png" alt="DNWL_PHTO">
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html#services">SERVICES</a>
+            <a href="gallery.html">GALLERY</a>
+            <a href="information.html">INFORMATION</a>
+            <a href="index.html#schedule">SCHEDULE A SHOOT</a>
+            <a href="index.html#login">LOGIN</a>
+        </div>
+        <div class="mobile-menu">
+            <button class="menu-button">Menu</button>
+            <div class="mobile-nav">
+                <a href="index.html#services">SERVICES</a>
+                <a href="gallery.html">GALLERY</a>
+                <a href="information.html">INFORMATION</a>
+                <a href="index.html#schedule">SCHEDULE A SHOOT</a>
+                <a href="index.html#login">LOGIN</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Category Filter -->
+        <div class="category-filter">
+            <button class="filter-btn" data-category="all">ALL</button>
+            <button class="filter-btn active" data-category="headshots">HEADSHOTS</button>
+            <button class="filter-btn" data-category="branding">PRODUCT BRANDING</button>
+            <button class="filter-btn" data-category="events">COMPANY EVENTS</button>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="gallery-grid">
+            <!-- Headshots -->
+            <div class="gallery-item" data-category="headshots">
+                <img src="images/Headshot01.png" alt="Professional Headshot">
+            </div>
+            <div class="gallery-item" data-category="headshots">
+                <img src="images/Headshot02.png" alt="Professional Headshot">
+            </div>
+            <div class="gallery-item" data-category="headshots">
+                <img src="images/Headshot03.jpeg" alt="Professional Headshot">
+            </div>
+            <div class="gallery-item" data-category="headshots">
+                <img src="images/Headshot04.jpeg" alt="Professional Headshot">
+            </div>
+            <div class="gallery-item" data-category="headshots">
+                <img src="images/Headshot05.jpeg" alt="Professional Headshot">
+            </div>
+            <div class="gallery-item" data-category="headshots">
+                <img src="images/Headshot06.jpeg" alt="Professional Headshot">
+            </div>
+
+            <!-- Product Branding -->
+            <div class="gallery-item" data-category="branding">
+                <img src="images/Branding01.jpeg" alt="Product Branding">
+            </div>
+            <div class="gallery-item" data-category="branding">
+                <img src="images/Branding02.jpeg" alt="Product Branding">
+            </div>
+
+            <!-- Company Events -->
+            <div class="gallery-item" data-category="events">
+                <img src="images/FemaleSpeaker.jpeg" alt="Company Event">
+            </div>
+            <div class="gallery-item" data-category="events">
+                <img src="images/Keynote.jpeg" alt="Company Event">
+            </div>
+            <div class="gallery-item" data-category="events">
+                <img src="images/Group.jpeg" alt="Company Event">
+            </div>
+            <div class="gallery-item" data-category="events">
+                <img src="images/Annual01.jpeg" alt="Company Event">
+            </div>
+            <div class="gallery-item" data-category="events">
+                <img src="images/Annual02.jpeg" alt="Company Event">
+            </div>
+        </div>
+    </main>
+
+    <!-- Same footer as other pages -->
+    <footer>
+        <!-- Footer content -->
+    </footer>
+
+    <div class="lightbox">
+        <button class="lightbox-close">&times;</button>
+        <button class="lightbox-prev">&lt;</button>
+        <button class="lightbox-next">&gt;</button>
+        <div class="lightbox-content">
+            <img src="" alt="">
+            <p class="lightbox-caption"></p>
+        </div>
+    </div>
+
+    <script>
+        // Wrap all JavaScript in DOMContentLoaded event
+        document.addEventListener('DOMContentLoaded', function() {
+            // Menu toggle
+            document.querySelector('.menu-button').addEventListener('click', function() {
+                this.parentElement.classList.toggle('active');
+            });
+
+            // Gallery filtering
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            const lightbox = document.querySelector('.lightbox');
+            const lightboxImg = lightbox.querySelector('img');
+            const closeBtn = lightbox.querySelector('.lightbox-close');
+            const prevBtn = lightbox.querySelector('.lightbox-prev');
+            const nextBtn = lightbox.querySelector('.lightbox-next');
+            let currentCategory = 'headshots';
+            let currentIndex = 0;
+
+            // Show headshots by default
+            galleryItems.forEach(item => {
+                if (item.dataset.category !== 'headshots') {
+                    item.style.display = 'none';
+                }
+            });
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    const category = button.dataset.category;
+
+                    galleryItems.forEach(item => {
+                        if (category === 'all' || item.dataset.category === category) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Get all images in current category
+            function getCategoryImages() {
+                return Array.from(document.querySelectorAll(`.gallery-item[data-category="${currentCategory}"]:not([style*="display: none"]) img`));
+            }
+
+            // Add data attributes to gallery items for captions
+            document.querySelectorAll('.gallery-item').forEach(item => {
+                if (item.dataset.category === 'headshots') {
+                    item.dataset.caption = "Professional headshot photography capturing personality and confidence.";
+                } else if (item.dataset.category === 'branding') {
+                    item.dataset.caption = "Product branding photography that tells your brand's unique story.";
+                } else if (item.dataset.category === 'events') {
+                    item.dataset.caption = "Corporate event photography documenting key moments and interactions.";
+                }
+            });
+
+            // Update lightbox open function to include caption
+            const lightboxCaption = lightbox.querySelector('.lightbox-caption');
+            document.querySelectorAll('.gallery-item img').forEach(img => {
+                img.addEventListener('click', () => {
+                    const images = getCategoryImages();
+                    currentIndex = images.indexOf(img);
+                    lightboxImg.src = img.src;
+                    lightboxCaption.textContent = img.closest('.gallery-item').dataset.caption;
+                    lightbox.classList.add('active');
+                });
+            });
+
+            // Close lightbox
+            closeBtn.addEventListener('click', () => {
+                lightbox.classList.remove('active');
+            });
+
+            // Previous image
+            prevBtn.addEventListener('click', () => {
+                const images = getCategoryImages();
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                lightboxImg.src = images[currentIndex].src;
+                lightboxCaption.textContent = images[currentIndex].closest('.gallery-item').dataset.caption;
+            });
+
+            // Next image
+            nextBtn.addEventListener('click', () => {
+                const images = getCategoryImages();
+                currentIndex = (currentIndex + 1) % images.length;
+                lightboxImg.src = images[currentIndex].src;
+                lightboxCaption.textContent = images[currentIndex].closest('.gallery-item').dataset.caption;
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (!lightbox.classList.contains('active')) return;
+                
+                if (e.key === 'Escape') lightbox.classList.remove('active');
+                if (e.key === 'ArrowLeft') prevBtn.click();
+                if (e.key === 'ArrowRight') nextBtn.click();
+            });
+
+            // Touch swipe for mobile
+            let touchStartX = 0;
+            lightbox.addEventListener('touchstart', (e) => {
+                touchStartX = e.touches[0].clientX;
+            });
+
+            lightbox.addEventListener('touchend', (e) => {
+                const touchEndX = e.changedTouches[0].clientX;
+                const diff = touchStartX - touchEndX;
+
+                if (Math.abs(diff) > 50) { // Minimum swipe distance
+                    if (diff > 0) {
+                        nextBtn.click(); // Swipe left = next
+                    } else {
+                        prevBtn.click(); // Swipe right = previous
+                    }
+                }
+            });
+
+            // Update current category when switching tabs
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    currentCategory = button.dataset.category;
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

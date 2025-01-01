@@ -1,0 +1,136 @@
+/* Override variables for information page */
+body.information-page {
+    --background-color: #475552;
+    --text-color: white;
+    background-color: var(--background-color);
+}
+
+/* Container02 Styles for Information page */
+.container02 {
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+    padding: 100px 100px 0 100px;
+    border-bottom: 1px solid white;
+}
+
+.container02 .container-content {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    position: relative;
+    box-sizing: border-box;
+    align-items: stretch;
+    margin-bottom: 100px;
+}
+
+.container02 .right-side {
+    width: 40%;
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container0201 {
+    width: 60%;
+    margin-right: 0;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.container0201 img {
+    width: 60%;
+    height: auto;
+    object-fit: contain;
+    margin-left: auto;
+}
+
+.container0202 {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.tagline {
+    font-family: "Arimo", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 2.5rem;
+    letter-spacing: -1.5px;
+    white-space: nowrap;
+    color: var(--text-color);
+}
+
+.container0203 {
+    margin-bottom: 20px;
+}
+
+.container0203 p {
+    font-family: "Nixie One", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    /* Override container padding for mobile */
+    .container02 {
+        padding: 20px;
+    }
+
+    /* Stack content vertically */
+    .container02 .container-content {
+        flex-direction: column;
+        margin-bottom: 40px;
+        gap: 30px;
+    }
+    
+    /* Make image full width */
+    .container0201 {
+        width: 100%;
+        margin: 0;
+    }
+    
+    .container0201 img {
+        width: 100%;
+        margin: 0;
+    }
+    
+    /* Make text content full width */
+    .container02 .right-side {
+        width: 100%;
+        margin: 0;
+    }
+
+    /* Adjust text sizes */
+    .tagline {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .container0203 p {
+        font-size: 1.1rem;
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    /* Adjust navigation */
+    nav {
+        padding: 15px;
+    }
+
+    .nav-links {
+        display: none;  /* Hide regular nav links */
+    }
+
+    /* Add hamburger menu for mobile */
+    .mobile-menu {
+        display: block;  /* Show on mobile */
+    }
+} 
