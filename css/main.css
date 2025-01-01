@@ -14,7 +14,6 @@ body {
     padding: 0;
     font-family: var(--font-primary);
     background-color: var(--background-color);
-    overflow-x: hidden;
     width: 100%;
     min-height: 100vh;
     display: flex;
@@ -74,6 +73,7 @@ button:hover,
 
 main {
     flex: 1;
+    width: 100%;
 }
 
 /* Navigation */

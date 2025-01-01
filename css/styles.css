@@ -534,4 +534,16 @@
     font-style: normal;
     font-size: 1.2rem;
     line-height: 1.6;
+}
+
+.container0102 .tagline {
+    text-align: right;
+}
+
+.container0202 .tagline {
+    text-align: left;
+}
+
+.container0302 .tagline {
+    text-align: right;
 } 
