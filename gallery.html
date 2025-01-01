@@ -105,6 +105,18 @@
             <div class="gallery-item" data-category="branding">
                 <img src="images/Branding02.jpeg" alt="Company Branding">
             </div>
+            <div class="gallery-item" data-category="branding">
+                <img src="images/Product01.jpeg" alt="Product Photography">
+            </div>
+            <div class="gallery-item" data-category="branding">
+                <img src="images/Product02.jpeg" alt="Product Photography">
+            </div>
+            <div class="gallery-item" data-category="branding">
+                <img src="images/AnnualReport01.jpeg" alt="Annual Report Photography">
+            </div>
+            <div class="gallery-item" data-category="branding">
+                <img src="images/AnnualReport02.jpeg" alt="Annual Report Photography">
+            </div>
 
             <!-- Company Events -->
             <div class="gallery-item" data-category="events">
@@ -121,6 +133,18 @@
             </div>
             <div class="gallery-item" data-category="events">
                 <img src="images/Annual02.jpeg" alt="Company Event">
+            </div>
+            <div class="gallery-item" data-category="events">
+                <img src="images/Gathering01.jpeg" alt="Corporate Event">
+            </div>
+            <div class="gallery-item" data-category="events">
+                <img src="images/Gathering02.jpeg" alt="Corporate Event">
+            </div>
+            <div class="gallery-item" data-category="events">
+                <img src="images/Gathering01.jpeg" alt="Corporate Event">
+            </div>
+            <div class="gallery-item" data-category="events">
+                <img src="images/Gathering02.jpeg" alt="Corporate Event">
             </div>
         </div>
     </main>
@@ -271,6 +295,35 @@
             if (e.key === 'Escape') lightbox.classList.remove('active');
             if (e.key === 'ArrowLeft') prevBtn.click();
             if (e.key === 'ArrowRight') nextBtn.click();
+        });
+
+        // Mouse wheel navigation
+        let lastWheelTime = Date.now();
+        let wheelDelta = 0;
+        const WHEEL_THRESHOLD = 100; // Increased threshold for scroll
+        const WHEEL_TIMEOUT = 250;   // Minimum time between scroll actions in milliseconds
+
+        lightbox.addEventListener('wheel', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            e.preventDefault(); // Prevent page scrolling
+            
+            const now = Date.now();
+            if (now - lastWheelTime > WHEEL_TIMEOUT) {
+                wheelDelta = 0; // Reset accumulated delta after timeout
+            }
+            
+            wheelDelta += e.deltaY;
+            lastWheelTime = now;
+
+            // Only trigger image change if threshold is met
+            if (Math.abs(wheelDelta) >= WHEEL_THRESHOLD) {
+                if (wheelDelta > 0) {
+                    nextBtn.click(); // Scroll down = next image
+                } else {
+                    prevBtn.click(); // Scroll up = previous image
+                }
+                wheelDelta = 0; // Reset after triggering
+            }
         });
 
         // Touch swipe for mobile
