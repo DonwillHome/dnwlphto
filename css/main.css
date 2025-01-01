@@ -5,6 +5,7 @@
     --background-color: #f7c944;
     --font-primary: "Noto Sans", sans-serif;
     --font-secondary: "Antic Didone", serif;
+    cursor: url('../images/CursorMain.png') 20 20, auto !important;
 }
 
 /* Base styles */
@@ -18,6 +19,57 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    cursor: none !important;
+}
+
+/* Hide system cursor everywhere */
+* {
+    cursor: none !important;
+}
+
+/* Also hide cursor on specific interactive elements */
+a, 
+button, 
+input, 
+textarea, 
+select,
+.language-toggle,
+.menu-button,
+.subscribe-form button,
+.mobile-nav a {
+    cursor: none !important;
+}
+
+/* And on hover states */
+a:hover,
+button:hover,
+.language-toggle:hover,
+.menu-button:hover,
+.subscribe-form button:hover,
+.mobile-nav a:hover {
+    cursor: none !important;
+}
+
+/* Custom cursor */
+.custom-cursor {
+    width: 20px;
+    height: 20px;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-20px, -20px);
+    transition: all 0.1s ease;
+    opacity: 0;
+    visibility: visible;
+}
+
+/* Cursor state when clicking - only change the image */
+.custom-cursor.clicking {
+    background-image: url('../images/CursorDown.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 1;
 }
 
 main {
@@ -150,6 +202,25 @@ footer {
     .footer-section {
         margin-right: 0;
         margin-bottom: 40px;
+    }
+
+    /* Hide regular nav links and show mobile menu */
+    .nav-links {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
+    /* Adjust nav padding for mobile */
+    nav {
+        padding: 15px;
+    }
+
+    /* Adjust footer padding for mobile */
+    footer {
+        padding: 40px 20px;
     }
 }
 

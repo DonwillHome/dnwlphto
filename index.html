@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Nixie+One&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="custom-cursor"></div>
     <nav>
         <div class="logo">
             <a href="index.html">
@@ -211,6 +212,26 @@
             this.parentElement.classList.toggle('active');
         });
 
+        // Custom cursor functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const cursor = document.querySelector('.custom-cursor');
+            
+            // Update cursor position
+            document.addEventListener('mousemove', function(e) {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+            });
+
+            // Add clicking state
+            document.addEventListener('mousedown', function() {
+                cursor.classList.add('clicking');
+            });
+
+            document.addEventListener('mouseup', function() {
+                cursor.classList.remove('clicking');
+            });
+        });
+
         // Language switching functionality
         const translations = {
             en: {
@@ -255,7 +276,8 @@
         let currentLang = localStorage.getItem('selectedLanguage') || 'en';
 
         const langToggle = document.getElementById('langToggle');
-        const langTexts = langToggle.querySelectorAll('.lang-text');
+        const langToggleMobile = document.getElementById('langToggleMobile');
+        const langTexts = document.querySelectorAll('.lang-text');
 
         // Function to update UI language
         function updateLanguage(lang) {
@@ -267,7 +289,7 @@
                 }
             });
 
-            // Update button appearance
+            // Update button appearance for both desktop and mobile
             langTexts.forEach(text => {
                 if (text.getAttribute('data-lang') === lang) {
                     text.classList.remove('inactive');
@@ -281,10 +303,14 @@
             currentLang = lang;
         }
 
-        // Toggle language when button is clicked
-        langToggle.addEventListener('click', () => {
-            const newLang = currentLang === 'en' ? 'sv' : 'en';
-            updateLanguage(newLang);
+        // Toggle language when either button is clicked
+        [langToggle, langToggleMobile].forEach(toggle => {
+            if (toggle) {
+                toggle.addEventListener('click', () => {
+                    const newLang = currentLang === 'en' ? 'sv' : 'en';
+                    updateLanguage(newLang);
+                });
+            }
         });
 
         // Initialize with saved language
