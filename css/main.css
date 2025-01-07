@@ -57,7 +57,7 @@ button:hover,
     pointer-events: none;
     z-index: 9999;
     transform: translate(-11px, -12px);
-    background-image: url('/dnwlphto/images/CursorDown.png');
+    background-image: url('../images/CursorMain.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
