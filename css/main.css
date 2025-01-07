@@ -5,7 +5,7 @@
     --background-color: #f7c944;
     --font-primary: "Noto Sans", sans-serif;
     --font-secondary: "Antic Didone", serif;
-    cursor: url('../images/CursorMain.png'), auto !important;
+    cursor: url('/dnwlphto/images/CursorMain.png'), auto !important;
 }
 
 /* Base styles */
@@ -57,7 +57,7 @@ button:hover,
     pointer-events: none;
     z-index: 9999;
     transform: translate(-11px, -12px);
-    background-image: url('../images/CursorDown.png');
+    background-image: url('/dnwlphto/images/CursorDown.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -332,7 +332,7 @@ footer {
     pointer-events: none;
     z-index: 9999;
     transform: translate(-10px, -10px); /* Adjusted for new size */
-    background-image: url('../images/CursorDown.png');
+    background-image: url('/dnwlphto/images/CursorDown.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
