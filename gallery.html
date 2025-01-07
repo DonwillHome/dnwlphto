@@ -19,7 +19,7 @@
     <nav>
         <div class="logo">
             <a href="index.html">
-                <img src="/dnwlphto/images/Headerlogo.png" alt="DNWL_PHTO">
+                <img src="Images/Headerlogo.png" alt="DNWL_PHTO">
             </a>
         </div>
         <!-- Regular nav links -->
@@ -80,10 +80,10 @@
         <div class="gallery-grid">
             <!-- Headshots -->
             <div class="gallery-item" data-category="headshots">
-                <img src="/dnwlphto/images/Headshot01.png" alt="Professional Headshot">
+                <img src="Images/Headshot01.png" alt="Professional Headshot">
             </div>
             <div class="gallery-item" data-category="headshots">
-                <img src="./images/Headshot02.png" alt="Professional Headshot">
+                <img src="Images/Headshot02.png" alt="Professional Headshot">
             </div>
             <div class="gallery-item" data-category="headshots">
                 <img src="./images/Headshot03.jpeg" alt="Professional Headshot">
@@ -200,161 +200,10 @@
         document.querySelector('.menu-button').addEventListener('click', function() {
             this.parentElement.classList.toggle('active');
         });
-
-        // Gallery filtering
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const galleryItems = document.querySelectorAll('.gallery-item');
-        const lightbox = document.querySelector('.lightbox');
-        const lightboxImg = lightbox.querySelector('img');
-        const closeBtn = lightbox.querySelector('.lightbox-close');
-        const prevBtn = lightbox.querySelector('.lightbox-prev');
-        const nextBtn = lightbox.querySelector('.lightbox-next');
-        let currentCategory = 'headshots';
-        let currentIndex = 0;
-
-        // Show headshots by default
-        galleryItems.forEach(item => {
-            if (item.dataset.category !== 'headshots') {
-                item.style.display = 'none';
-            }
-        });
-
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-
-                const category = button.dataset.category;
-
-                galleryItems.forEach(item => {
-                    if (category === 'all' || item.dataset.category === category) {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-            });
-        });
-
-        // Get all images in current category
-        function getCategoryImages() {
-            if (currentCategory === 'all') {
-                return Array.from(document.querySelectorAll('.gallery-item:not([style*="display: none"]) img'));
-            }
-            return Array.from(document.querySelectorAll(`.gallery-item[data-category="${currentCategory}"]:not([style*="display: none"]) img`));
-        }
-
-        // Add data attributes to gallery items for captions
-        document.querySelectorAll('.gallery-item').forEach(item => {
-            if (item.dataset.category === 'headshots') {
-                item.dataset.caption = "Professional headshot photography capturing personality and confidence.";
-            } else if (item.dataset.category === 'branding') {
-                item.dataset.caption = "Company branding photography that tells your brand's unique story.";
-            } else if (item.dataset.category === 'events') {
-                item.dataset.caption = "Corporate event photography documenting key moments and interactions.";
-            }
-        });
-
-        // Update lightbox open function to include caption
-        const lightboxCaption = lightbox.querySelector('.lightbox-caption');
-        document.querySelectorAll('.gallery-item img').forEach(img => {
-            img.addEventListener('click', () => {
-                const images = getCategoryImages();
-                currentIndex = images.indexOf(img);
-                lightboxImg.src = img.src;
-                lightboxCaption.textContent = img.closest('.gallery-item').dataset.caption;
-                lightbox.classList.add('active');
-            });
-        });
-
-        // Close lightbox
-        closeBtn.addEventListener('click', () => {
-            lightbox.classList.remove('active');
-        });
-
-        // Previous image
-        prevBtn.addEventListener('click', () => {
-            const images = getCategoryImages();
-            currentIndex = (currentIndex - 1 + images.length) % images.length;
-            lightboxImg.src = images[currentIndex].src;
-            lightboxCaption.textContent = images[currentIndex].closest('.gallery-item').dataset.caption;
-        });
-
-        // Next image
-        nextBtn.addEventListener('click', () => {
-            const images = getCategoryImages();
-            currentIndex = (currentIndex + 1) % images.length;
-            lightboxImg.src = images[currentIndex].src;
-            lightboxCaption.textContent = images[currentIndex].closest('.gallery-item').dataset.caption;
-        });
-
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (!lightbox.classList.contains('active')) return;
-            
-            if (e.key === 'Escape') lightbox.classList.remove('active');
-            if (e.key === 'ArrowLeft') prevBtn.click();
-            if (e.key === 'ArrowRight') nextBtn.click();
-        });
-
-        // Mouse wheel navigation
-        let lastWheelTime = Date.now();
-        let wheelDelta = 0;
-        const WHEEL_THRESHOLD = 100; // Increased threshold for scroll
-        const WHEEL_TIMEOUT = 250;   // Minimum time between scroll actions in milliseconds
-
-        lightbox.addEventListener('wheel', (e) => {
-            if (!lightbox.classList.contains('active')) return;
-            e.preventDefault(); // Prevent page scrolling
-            
-            const now = Date.now();
-            if (now - lastWheelTime > WHEEL_TIMEOUT) {
-                wheelDelta = 0; // Reset accumulated delta after timeout
-            }
-            
-            wheelDelta += e.deltaY;
-            lastWheelTime = now;
-
-            // Only trigger image change if threshold is met
-            if (Math.abs(wheelDelta) >= WHEEL_THRESHOLD) {
-                if (wheelDelta > 0) {
-                    nextBtn.click(); // Scroll down = next image
-                } else {
-                    prevBtn.click(); // Scroll up = previous image
-                }
-                wheelDelta = 0; // Reset after triggering
-            }
-        });
-
-        // Touch swipe for mobile
-        let touchStartX = 0;
-        lightbox.addEventListener('touchstart', (e) => {
-            touchStartX = e.touches[0].clientX;
-        });
-
-        lightbox.addEventListener('touchend', (e) => {
-            const touchEndX = e.changedTouches[0].clientX;
-            const diff = touchStartX - touchEndX;
-
-            if (Math.abs(diff) > 50) { // Minimum swipe distance
-                if (diff > 0) {
-                    nextBtn.click(); // Swipe left = next
-                } else {
-                    prevBtn.click(); // Swipe right = previous
-                }
-            }
-        });
-
-        // Update current category when switching tabs
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                currentCategory = button.dataset.category;
-            });
-        });
     </script>
 
     <script src="js/translations.js"></script>
-    <script src="js/gallery.js"></script>
     <script src="js/cursor.js"></script>
+    <script src="js/gallery.js"></script>
 </body>
 </html> 
