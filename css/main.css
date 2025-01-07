@@ -5,7 +5,7 @@
     --background-color: #f7c944;
     --font-primary: "Noto Sans", sans-serif;
     --font-secondary: "Antic Didone", serif;
-    cursor: url('/dnwlphto/images/CursorMain.png'), auto !important;
+    cursor: url('../Images/CursorMain.png'), auto !important;
 }
 
 /* Base styles */
@@ -57,7 +57,7 @@ button:hover,
     pointer-events: none;
     z-index: 9999;
     transform: translate(-11px, -12px);
-    background-image: url('../images/CursorMain.png');
+    background-image: url('../Images/CursorMain.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -326,13 +326,13 @@ footer {
 
 /* Click effect */
 .click-image {
-    width: 20px;  /* Changed from 40px */
-    height: 20px; /* Changed from 40px */
+    width: 20px;
+    height: 20px;
     position: fixed;
     pointer-events: none;
     z-index: 9999;
-    transform: translate(-10px, -10px); /* Adjusted for new size */
-    background-image: url('/dnwlphto/images/CursorDown.png');
+    transform: translate(-10px, -10px);
+    background-image: url('../Images/CursorDown.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
